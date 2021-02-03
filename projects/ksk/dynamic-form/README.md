@@ -13,7 +13,7 @@ Run `ng build textInput` to build the project. The build artifacts will be store
 
 ## Publishing
 
-After building your library with `ng build textInput`, go to the dist folder `cd dist/text-input` and run `npm publish`.
+After building your library with `ng build textInput`, go to the dist folder `cd dist/dynamic-form` and run `npm publish`.
 
 ## Running unit tests
 

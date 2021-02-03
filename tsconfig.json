@@ -20,9 +20,9 @@
       "dom"
     ],
     "paths": {
-      "@ksk/text-input": [
-        "dist/ksk/text-input/ksk-text-input",
-        "dist/ksk/text-input"
+      "@ksk/dynamic-form": [
+        "dist/ksk/dynamic-form/ksk-dynamic-form",
+        "dist/ksk/dynamic-form"
       ]
     }
   },

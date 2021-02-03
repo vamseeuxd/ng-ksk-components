@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, '../../../coverage/ksk/text-input'),
+      dir: require('path').join(__dirname, '../../../coverage/ksk/dynamic-form'),
       subdir: '.',
       reporters: [
         { type: 'html' },

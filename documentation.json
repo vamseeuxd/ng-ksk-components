@@ -1,10 +1,286 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "DynamicFormControllerInterface",
+            "id": "interface-DynamicFormControllerInterface-f3446bd111d83a97ccc9ee8c14f07f7e",
+            "file": "projects/ksk/dynamic-form/src/lib/interface/dynamic-form-controller.interface.ts",
+            "type": "interface",
+            "sourceCode": "import {FORM_CONTROLLER_TYPE} from './form-controller.enum';\nimport {COLUMN_SIZE_TYPE} from './column-size.type';\nimport {OFFSET_SIZE_TYPE} from './offset-size.type';\n\nexport interface DynamicFormControllerInterface {\n  type: FORM_CONTROLLER_TYPE;\n  columnSize: COLUMN_SIZE_TYPE[];\n  offsetSize: OFFSET_SIZE_TYPE[];\n  label: string;\n  name: string;\n  placeholder: string;\n  defaultValue: any;\n  required?: boolean;\n  disabled?: boolean;\n  hide?: boolean;\n  showInGrid?: boolean;\n  controllerClass?: string;\n  min?: number;\n  max?: number;\n  pattern?: string;\n  requiredError?: string;\n  emailError?: string;\n  minError?: string;\n  maxError?: string;\n  patternError?: string;\n  duplicateMessage?: string;\n  multiple?: boolean;\n  dataProvider?: {\n    identifyBy: string;\n    displayBy: string;\n    data: any[];\n  };\n}\n\nexport function getDynamicFormController(\n  type: FORM_CONTROLLER_TYPE,\n  label: string,\n  value: any,\n  name: string,\n  placeholder: string,\n  props = {},\n  columnSize: COLUMN_SIZE_TYPE[] = ['col-md-4'],\n  offsetSize: OFFSET_SIZE_TYPE[] = [],\n): DynamicFormControllerInterface {\n  return {\n    type,\n    label,\n    defaultValue: value,\n    name,\n    placeholder,\n    columnSize,\n    offsetSize,\n    ...props\n  };\n}\n\n",
+            "properties": [
+                {
+                    "name": "columnSize",
+                    "type": "COLUMN_SIZE_TYPE[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "controllerClass",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "dataProvider",
+                    "type": "literal type",
+                    "optional": true,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "defaultValue",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "disabled",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "duplicateMessage",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "emailError",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "hide",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "max",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "maxError",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "min",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "minError",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "multiple",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "offsetSize",
+                    "type": "OFFSET_SIZE_TYPE[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "pattern",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "patternError",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "placeholder",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "required",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "requiredError",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "showInGrid",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "type",
+                    "type": "FORM_CONTROLLER_TYPE",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        }
+    ],
     "injectables": [],
     "classes": [],
     "directives": [],
     "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-3dc3f5b31bf2423960b0b756760d2238",
+            "file": "projects/integration-testing/src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "formControls",
+                    "defaultValue": "[\n    getDynamicFormController(FORM_CONTROLLER_TYPE.TEXT, 'First Name', 'Vamsee Kalyan', 'firstName', 'Enter First Name', {required: true}),\n  ]",
+                    "type": "DynamicFormControllerInterface[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 84
+                },
+                {
+                    "name": "showInfo",
+                    "defaultValue": "{\n    showType: true,\n    showHide: false,\n    showShowInGrid: true,\n    showControllerClass: true,\n    showColumnClass: true,\n    showLabel: true,\n    showValue: true,\n    showName: true,\n    showDisabled: false,\n    showRequired: true,\n    showMinlength: true,\n    showMaxlength: true,\n    showMin: true,\n    showMax: true,\n    showPattern: true,\n    showPlaceholder: true,\n    showRequiredError: true,\n    showEmailError: true,\n    showMinError: true,\n    showMaxError: true,\n    showMinlengthError: true,\n    showMaxlengthError: true,\n    showPatternError: true,\n    showDuplicateMessage: true,\n    showMultiple: true,\n    showDataProvider: true,\n  }",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 55
+                },
+                {
+                    "name": "showTabs",
+                    "defaultValue": "{\n    basicDetails: true,\n    requiredValidation: true,\n    minMaxValidation: true,\n    patternValidation: true,\n    emailValidation: true,\n    duplicateValidation: true,\n    dataProvider: true,\n  }",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "{\n    type: '',\n    name: '',\n    label: '',\n    value: '',\n    placeholder: '',\n    controllerClass: '',\n    columnClass: '',\n    hide: false,\n    showInGrid: true,\n    disabled: false,\n    multiple: false,\n    required: true,\n    requiredError: '',\n    minlength: '',\n    minlengthError: '',\n    maxlength: '',\n    maxlengthError: '',\n    min: '',\n    minError: '',\n    max: '',\n    maxError: '',\n    pattern: '',\n    patternError: '',\n    emailError: '',\n    duplicateMessage: '',\n    dataProvider: '',\n  }",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onTypeChange",
+                    "args": [
+                        {
+                            "name": "type",
+                            "type": "FORM_CONTROLLER_TYPE"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 128,
+                    "jsdoctags": [
+                        {
+                            "name": "type",
+                            "type": "FORM_CONTROLLER_TYPE",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "resetValidations",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 88
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component} from '@angular/core';\nimport {\n  getDynamicFormController,\n  DynamicFormControllerInterface\n} from '../../../ksk/dynamic-form/src/lib/interface/dynamic-form-controller.interface';\nimport {FORM_CONTROLLER_TYPE} from '../../../ksk/dynamic-form/src/lib/interface/form-controller.enum';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n\n  showTabs = {\n    basicDetails: true,\n    requiredValidation: true,\n    minMaxValidation: true,\n    patternValidation: true,\n    emailValidation: true,\n    duplicateValidation: true,\n    dataProvider: true,\n  }\n\n  value = {\n    type: '',\n    name: '',\n    label: '',\n    value: '',\n    placeholder: '',\n    controllerClass: '',\n    columnClass: '',\n    hide: false,\n    showInGrid: true,\n    disabled: false,\n    multiple: false,\n    required: true,\n    requiredError: '',\n    minlength: '',\n    minlengthError: '',\n    maxlength: '',\n    maxlengthError: '',\n    min: '',\n    minError: '',\n    max: '',\n    maxError: '',\n    pattern: '',\n    patternError: '',\n    emailError: '',\n    duplicateMessage: '',\n    dataProvider: '',\n  }\n\n\n  showInfo = {\n    showType: true,\n    showHide: false,\n    showShowInGrid: true,\n    showControllerClass: true,\n    showColumnClass: true,\n    showLabel: true,\n    showValue: true,\n    showName: true,\n    showDisabled: false,\n    showRequired: true,\n    showMinlength: true,\n    showMaxlength: true,\n    showMin: true,\n    showMax: true,\n    showPattern: true,\n    showPlaceholder: true,\n    showRequiredError: true,\n    showEmailError: true,\n    showMinError: true,\n    showMaxError: true,\n    showMinlengthError: true,\n    showMaxlengthError: true,\n    showPatternError: true,\n    showDuplicateMessage: true,\n    showMultiple: true,\n    showDataProvider: true,\n  }\n\n  formControls: DynamicFormControllerInterface[] = [\n    getDynamicFormController(FORM_CONTROLLER_TYPE.TEXT, 'First Name', 'Vamsee Kalyan', 'firstName', 'Enter First Name', {required: true}),\n  ];\n\n  resetValidations() {\n    this.showInfo = {\n      showType: true,\n      showHide: true,\n      showShowInGrid: true,\n      showControllerClass: true,\n      showColumnClass: true,\n      showLabel: true,\n      showValue: true,\n      showName: true,\n      showDisabled: true,\n      showRequired: true,\n      showMinlength: true,\n      showMaxlength: true,\n      showMin: true,\n      showMax: true,\n      showPattern: true,\n      showPlaceholder: true,\n      showRequiredError: true,\n      showEmailError: true,\n      showMinError: true,\n      showMaxError: true,\n      showMinlengthError: true,\n      showMaxlengthError: true,\n      showPatternError: true,\n      showDuplicateMessage: true,\n      showMultiple: true,\n      showDataProvider: true,\n    }\n    this.showTabs = {\n      basicDetails: true,\n      requiredValidation: true,\n      minMaxValidation: true,\n      patternValidation: true,\n      emailValidation: true,\n      duplicateValidation: true,\n      dataProvider: true,\n    }\n  }\n\n  onTypeChange(type: FORM_CONTROLLER_TYPE) {\n    this.resetValidations();\n    switch (type) {\n      case FORM_CONTROLLER_TYPE.EMAIL:\n        this.showTabs.minMaxValidation = false;\n        this.showTabs.patternValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.COLOR:\n        this.showTabs.minMaxValidation = false;\n        this.showTabs.patternValidation = false;\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.DATE:\n        this.showTabs.patternValidation = false;\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.DATETIME:\n        this.showTabs.patternValidation = false;\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.MONTH:\n        this.showTabs.patternValidation = false;\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.NUMBER:\n        this.showTabs.patternValidation = false;\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.PASSWORD:\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.SEARCH:\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.TEL:\n        this.showTabs.minMaxValidation = false;\n        this.showTabs.patternValidation = false;\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.TEXT:\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.TIME:\n        this.showTabs.patternValidation = false;\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.URL:\n        this.showTabs.minMaxValidation = false;\n        this.showTabs.patternValidation = false;\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.WEEK:\n        this.showTabs.patternValidation = false;\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.SELECT:\n        this.showTabs.minMaxValidation = false;\n        this.showTabs.patternValidation = false;\n        this.showTabs.emailValidation = false;\n        this.showTabs.dataProvider = false;\n        break;\n      case FORM_CONTROLLER_TYPE.RADIO:\n        this.showTabs.minMaxValidation = false;\n        this.showTabs.patternValidation = false;\n        this.showTabs.emailValidation = false;\n        break;\n      case FORM_CONTROLLER_TYPE.CHIPS:\n        this.showTabs.patternValidation = false;\n        this.showTabs.emailValidation = false;\n        break;\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"container-fluid\">\n  <form #sampleForm=\"ngForm\" class=\"w-100 pt-3\">\n    <mat-tab-group class=\"border\" dynamicHeight>\n      <!--  **************************************  Basic Details TAB  **************************************  -->\n      <mat-tab [disabled]=\"!showTabs.basicDetails\" label=\"Basic Details\">\n\n        <div class=\"container-fluid border-right-0 border-left-0\">\n          <div class=\"row pt-4\">\n            <!--  **********************************  Type  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Type</mat-label>\n                <mat-select autofocus (ngModelChange)=\"onTypeChange(sampleForm.value.type)\" [ngModel]=\"value.type\" required\n                            [disabled]=\"!showInfo.showType\" name=\"type\">\n                  <mat-option value=\"email\">email</mat-option>\n                  <mat-option value=\"color\">color</mat-option>\n                  <mat-option value=\"date\">date</mat-option>\n                  <mat-option value=\"datetime\">datetime</mat-option>\n                  <mat-option value=\"month\">month</mat-option>\n                  <mat-option value=\"number\">number</mat-option>\n                  <mat-option value=\"password\">password</mat-option>\n                  <mat-option value=\"search\">search</mat-option>\n                  <mat-option value=\"tel\">tel</mat-option>\n                  <mat-option value=\"text\">text</mat-option>\n                  <mat-option value=\"time\">time</mat-option>\n                  <mat-option value=\"url\">url</mat-option>\n                  <mat-option value=\"week\">week</mat-option>\n                  <mat-option value=\"select\">select</mat-option>\n                  <mat-option value=\"radio\">radio</mat-option>\n                  <mat-option value=\"chips\">chips</mat-option>\n                </mat-select>\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Type  **********************************  -->\n\n            <!--  **********************************  Name  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Name</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.name\" type=\"text\" matInput required [disabled]=\"!showInfo.showName\"\n                       name=\"name\"\n                       placeholder=\"Name\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Name  **********************************  -->\n\n            <!--  **********************************  Label  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Label</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.label\" type=\"text\" matInput required [disabled]=\"!showInfo.showLabel\"\n                       name=\"label\" placeholder=\"Label\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Label  **********************************  -->\n\n            <!--  **********************************  Value  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Value</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.value\" type=\"text\" matInput required [disabled]=\"!showInfo.showValue\"\n                       name=\"value\" placeholder=\"Value\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Value  **********************************  -->\n\n            <!--  **********************************  Placeholder  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Placeholder</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.placeholder\" type=\"text\" matInput [disabled]=\"!showInfo.showPlaceholder\"\n                       name=\"placeholder\" placeholder=\"Placeholder\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Placeholder  **********************************  -->\n\n            <!--  **********************************  Controller Class  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Controller Class</mat-label>\n                <input autocomplete=\"off\" type=\"text\" [ngModel]=\"value.controllerClass\" matInput\n                       [disabled]=\"!showInfo.showControllerClass\"\n                       name=\"controllerClass\" placeholder=\"Controller Class\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Controller Class  **********************************  -->\n\n            <!--  **********************************  Column Class  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Column Class</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.columnClass\" type=\"text\" matInput [disabled]=\"!showInfo.showColumnClass\"\n                       name=\"columnClass\" placeholder=\"Column Class\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Column Class  **********************************  -->\n\n            <!--  **********************************  Hide / Show  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3 pt-4\">\n              <mat-checkbox [ngModel]=\"value.hide\" [disabled]=\"!showInfo.showHide\" name=\"hide\">Hide</mat-checkbox>\n            </div>\n            <!--  **********************************  Hide / Show  **********************************  -->\n\n            <!--  **********************************  Show in Grid / Hide in Grid  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3 pt-4\">\n              <mat-checkbox [ngModel]=\"value.showInGrid\" [disabled]=\"!showInfo.showShowInGrid\" name=\"showInGrid\">Show in Grid / Hide in Grid\n              </mat-checkbox>\n            </div>\n            <!--  **********************************  Show in Grid / Hide in Grid  **********************************  -->\n\n            <!--  **********************************  Disable or Enable  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3 pt-4\">\n              <mat-checkbox [ngModel]=\"value.disabled\" [disabled]=\"!showInfo.showDisabled\"  name=\"disabled\">Disable or Enable</mat-checkbox>\n            </div>\n            <!--  **********************************  Disable or Enable  **********************************  -->\n\n            <!--  **********************************  Multiple / Single Selection  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3 pt-4\">\n              <mat-checkbox [ngModel]=\"value.multiple\" [disabled]=\"!showInfo.showMultiple\" name=\"multiple\">Multiple / Single Selection\n              </mat-checkbox>\n            </div>\n            <!--  **********************************  Multiple / Single Selection  **********************************  -->\n\n          </div>\n        </div>\n\n      </mat-tab>\n      <!--  **************************************  Basic Details TAB  **************************************  -->\n\n\n      <!--  ***********************************  Required Validation TAB  ***********************************  -->\n      <mat-tab [disabled]=\"!showTabs.requiredValidation\" label=\"Required Validation\">\n        <div class=\"container-fluid border-right-0 border-left-0\">\n          <div class=\"row pt-4\">\n            <!--  **********************************  Required or No Required  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3 pt-4\">\n              <mat-checkbox [ngModel]=\"value.required\" [disabled]=\"!showInfo.showRequired\" name=\"required\">Required or Optional\n              </mat-checkbox>\n            </div>\n\n            <!--  **********************************  Required or No Required  **********************************  -->\n\n            <!--  **********************************  Required Error  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Required Error</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.requiredError\" type=\"text\" matInput [disabled]=\"!showInfo.showRequiredError\"\n                       name=\"requiredError\" placeholder=\"Required Error\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Required Error  **********************************  -->\n          </div>\n        </div>\n      </mat-tab>\n      <!--  ***********************************  Required Validation TAB  ***********************************  -->\n\n\n      <!--  *****************************************  Min Max TAB  *****************************************  -->\n      <mat-tab [disabled]=\"!showTabs.minMaxValidation\" label=\"Min Max Validation\">\n        <div class=\"container-fluid border-right-0 border-left-0\">\n\n          <div class=\"row pt-4\">\n            <!--  **********************************  Min Length  **********************************  -->\n            <div class=\"col-md-4 offset-md-2 col-sm-6 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Min Length</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.minlength\" type=\"number\" matInput [disabled]=\"!showInfo.showMinlength\"\n                       name=\"minlength\" placeholder=\"Min Length\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Min Length  **********************************  -->\n\n            <!--  **********************************  Min Length Error  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Min Length Error</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.minlengthError\" type=\"text\" matInput [disabled]=\"!showInfo.showMinlengthError\"\n                       name=\"minlengthError\" placeholder=\"Min Length Error\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Min Length Error  **********************************  -->\n\n            <!--  **********************************  Max Length  **********************************  -->\n            <div class=\"col-md-4 offset-md-2 col-sm-6 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Max Length</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.maxlength\" type=\"number\" matInput [disabled]=\"!showInfo.showMaxlength\"\n                       name=\"maxlength\" placeholder=\"Max Length\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Max Length  **********************************  -->\n\n            <!--  **********************************  Max Length Error  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Max Length Error</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.maxlengthError\" type=\"text\" matInput [disabled]=\"!showInfo.showMaxlengthError\"\n                       name=\"maxlengthError\" placeholder=\"Max Length Error\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Max Length Error  **********************************  -->\n\n            <!--  **********************************  Min  **********************************  -->\n            <div class=\"col-md-4 offset-md-2 col-sm-6 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Min</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.min\" type=\"number\" matInput [disabled]=\"!showInfo.showMin\" name=\"min\"\n                       placeholder=\"Min\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Min  **********************************  -->\n\n            <!--  **********************************  Min Error  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Min Error</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.minError\" type=\"text\" matInput [disabled]=\"!showInfo.showMinError\"\n                       name=\"minError\"\n                       placeholder=\"Min Error\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Min Error  **********************************  -->\n\n            <!--  **********************************  Max  **********************************  -->\n            <div class=\"col-md-4 offset-md-2 col-sm-6 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Max</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.max\" type=\"number\" matInput [disabled]=\"!showInfo.showMax\" name=\"max\"\n                       placeholder=\"Max\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Max  **********************************  -->\n\n            <!--  **********************************  Max Error  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Max Error</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.maxError\" type=\"text\" matInput [disabled]=\"!showInfo.showMaxError\"\n                       name=\"maxError\"\n                       placeholder=\"Max Error\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Max Error  **********************************  -->\n          </div>\n        </div>\n      </mat-tab>\n      <!--  *****************************************  Min Max TAB  *****************************************  -->\n\n\n      <!--  ***********************************  Pattern Validation TAB  ***********************************  -->\n      <mat-tab [disabled]=\"!showTabs.patternValidation\" label=\"Pattern Validation\">\n        <div class=\"container-fluid border-right-0 border-left-0\">\n          <div class=\"row pt-4\">\n            <!--  **********************************  Pattern  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Pattern</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.pattern\" type=\"text\" matInput [disabled]=\"!showInfo.showPattern\" name=\"pattern\"\n                       placeholder=\"Pattern\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Pattern  **********************************  -->\n\n            <!--  **********************************  Pattern Error  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Pattern Error</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.patternError\" type=\"text\" matInput [disabled]=\"!showInfo.showPatternError\"\n                       name=\"patternError\" placeholder=\"Pattern Error\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Pattern Error  **********************************  -->\n          </div>\n        </div>\n      </mat-tab>\n      <!--  ***********************************  Pattern Validation TAB  ***********************************  -->\n\n\n      <!--  ************************************  Email Validation TAB  ************************************  -->\n      <mat-tab [disabled]=\"!showTabs.emailValidation\" label=\"Email Validation\">\n        <div class=\"container-fluid border-right-0 border-left-0\">\n          <!--  **********************************  Email Error  **********************************  -->\n          <div class=\"row pt-4\">\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Email Error</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.emailError\" type=\"text\" matInput [disabled]=\"!showInfo.showEmailError\"\n                       name=\"emailError\" placeholder=\"Email Error\">\n              </mat-form-field>\n            </div>\n          </div>\n          <!--  **********************************  Email Error  **********************************  -->\n        </div>\n      </mat-tab>\n      <!--  ************************************  Email Validation TAB  ************************************  -->\n\n\n      <!--  **********************************  Duplicate Validation TAB  **********************************  -->\n      <mat-tab [disabled]=\"!showTabs.duplicateValidation\" label=\"Duplicate Validation\">\n        <div class=\"container-fluid border-right-0 border-left-0\">\n          <!--  **********************************  Duplicate Message  **********************************  -->\n          <div class=\"row pt-4\">\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Duplicate Message</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.duplicateMessage\" type=\"text\" matInput [disabled]=\"!showInfo.showDuplicateMessage\"\n                       name=\"duplicateMessage\" placeholder=\"Duplicate Message\">\n              </mat-form-field>\n            </div>\n          </div>\n          <!--  **********************************  Duplicate Message  **********************************  -->\n        </div>\n      </mat-tab>\n      <!--  **********************************  Duplicate Validation TAB  **********************************  -->\n\n\n      <!--  *************************************  Data Provider TAB  *************************************  -->\n      <mat-tab [disabled]=\"!showTabs.dataProvider\" label=\"Data Provider\">\n        <div class=\"container-fluid border-right-0 border-left-0\">\n          <div class=\"row pt-4\">\n            <!--  **********************************  Data Provider  **********************************  -->\n            <div class=\"col-md-4 col-sm-6 col-lg-3 px-4 mb-3\">\n              <mat-form-field class=\"w-100\">\n                <mat-label>Data Provider</mat-label>\n                <input autocomplete=\"off\" [ngModel]=\"value.dataProvider\" type=\"text\" matInput [disabled]=\"!showInfo.showDataProvider\"\n                       name=\"dataProvider\" placeholder=\"Data Provider\">\n              </mat-form-field>\n            </div>\n            <!--  **********************************  Data Provider  **********************************  -->\n          </div>\n        </div>\n      </mat-tab>\n      <!--  *************************************  Data Provider TAB  *************************************  -->\n\n    </mat-tab-group>\n  </form>\n  <div class=\"container-fluid\">\n    <pre class=\"w-100 bg-light p-4 d-inline-block border mt-3\">{{sampleForm.value | json}}</pre>\n  </div>\n</div>\n"
+        },
         {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-642c6c4e474cd5a0ac760dfda26b2fc9",
@@ -85,6 +361,305 @@
                     }
                 }
             }
+        },
+        {
+            "name": "DynamicFormComponent",
+            "id": "component-DynamicFormComponent-3d59a2fbed2ce6b31233cc67ae68e9fe",
+            "file": "projects/ksk/dynamic-form/src/lib/dynamic-form/dynamic-form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ksk-dynamic-form",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./dynamic-form.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "formClass",
+                    "defaultValue": "'m-4'",
+                    "line": 13
+                },
+                {
+                    "name": "formControls",
+                    "defaultValue": "[]",
+                    "line": 14,
+                    "type": "DynamicFormControllerInterface[]"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "change",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 16,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "defaultColumnClass",
+                    "defaultValue": "'col-md-4 mb-2'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "dynamicForm",
+                    "type": "NgForm | undefined",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'dynamicForm'"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getFormControls",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "DynamicFormControllerInterface[]",
+                    "typeParameters": [],
+                    "line": 32
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';\r\nimport {NgForm} from '@angular/forms';\r\nimport {FORM_CONTROLLER_TYPE} from '../interface/form-controller.enum';\r\nimport {DynamicFormControllerInterface} from '../interface/dynamic-form-controller.interface';\r\n\r\n@Component({\r\n  selector: 'ksk-dynamic-form',\r\n  templateUrl: './dynamic-form.component.html',\r\n  styles: []\r\n})\r\nexport class DynamicFormComponent {\r\n\r\n  @Input() formClass = 'm-4';\r\n  @Input() formControls: DynamicFormControllerInterface[] = [];\r\n  @ViewChild('dynamicForm') dynamicForm: NgForm | undefined;\r\n  @Output() change: EventEmitter<any> = new EventEmitter();\r\n\r\n  defaultColumnClass = 'col-md-4 mb-2';\r\n\r\n  get form(): NgForm | undefined {\r\n    return this.dynamicForm;\r\n  }\r\n\r\n  get valid(): boolean | null {\r\n    return this.dynamicForm ? this.dynamicForm.valid : false;\r\n  }\r\n\r\n  get value(): boolean {\r\n    return this.dynamicForm ? this.dynamicForm.value : {};\r\n  }\r\n\r\n  getFormControls(): DynamicFormControllerInterface[] {\r\n    if (this.formControls && this.formControls.length > 0) {\r\n      return this.formControls.filter((d) => !d.hide);\r\n    } else {\r\n      return [];\r\n    }\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "accessors": {
+                "form": {
+                    "name": "form",
+                    "getSignature": {
+                        "name": "form",
+                        "type": "",
+                        "returnType": "NgForm | undefined",
+                        "line": 20
+                    }
+                },
+                "valid": {
+                    "name": "valid",
+                    "getSignature": {
+                        "name": "valid",
+                        "type": "",
+                        "returnType": "boolean | null",
+                        "line": 24
+                    }
+                },
+                "value": {
+                    "name": "value",
+                    "getSignature": {
+                        "name": "value",
+                        "type": "boolean",
+                        "returnType": "boolean",
+                        "line": 28
+                    }
+                }
+            },
+            "templateData": "<form #dynamicForm=\"ngForm\" [class]=\"formClass\">\r\n  <div class=\"row\">\r\n\r\n    <div\r\n      [class]=\"control.columnSize ? control.columnSize : defaultColumnClass\"\r\n      *ngFor=\"let control of getFormControls()\"\r\n    >\r\n      <div class=\"col-12\">control.type : {{control.type}}</div>\r\n      <ng-container [ngSwitch]=\"true\">\r\n        <ng-container\r\n          *ngSwitchCase=\"\r\n            (control.type == 'email' ||\r\n              control.type == 'color' ||\r\n              control.type == 'date' ||\r\n              control.type == 'datetime-local' ||\r\n              control.type == 'month' ||\r\n              control.type == 'number' ||\r\n              control.type == 'password' ||\r\n              control.type == 'search' ||\r\n              control.type == 'tel' ||\r\n              control.type == 'text' ||\r\n              control.type == 'time' ||\r\n              control.type == 'url' ||\r\n              control.type == 'week') &&\r\n            !control.hide\r\n          \"\r\n        >\r\n          <mat-form-field [class]=\"control.controllerClass\">\r\n            <mat-label>{{ control.label }}</mat-label>\r\n\r\n            <input\r\n              matInput\r\n              [(ngModel)]=\"control.defaultValue\"\r\n              autocomplete=\"off\"\r\n              [email]=\"control?.type == 'email'\"\r\n              [name]=\"control.name\"\r\n              [disabled]=\"control?.disabled\"\r\n              [required]=\"control?.required\"\r\n              [minlength]=\"control?.minlength\"\r\n              [maxlength]=\"control?.maxlength\"\r\n              [min]=\"control?.min\"\r\n              (change)=\"change.emit({ control: control, form: dynamicForm })\"\r\n              [max]=\"control?.max\"\r\n              [pattern]=\"control?.pattern\"\r\n              [type]=\"control?.type\"\r\n              [placeholder]=\"control?.placeholder\"\r\n            />\r\n\r\n            <!-- Required Error -->\r\n            <mat-error\r\n              *ngIf=\"(dynamicForm?.controls)[control.name]?.errors?.required\"\r\n            >\r\n              <span *ngIf=\"control.requiredError\">{{\r\n                control.requiredError\r\n                }}</span>\r\n              <span *ngIf=\"!control.requiredError\"\r\n              >{{ control.label }} is required</span\r\n              >\r\n            </mat-error>\r\n\r\n            <!-- Email Error -->\r\n            <mat-error *ngIf=\"(dynamicForm?.controls)[control.name]?.errors?.email\">\r\n              <span *ngIf=\"control.emailError\">{{ control.emailError }}</span>\r\n              <span *ngIf=\"!control.emailError\"\r\n              >provide valid {{ control.label }}</span\r\n              >\r\n            </mat-error>\r\n\r\n            <!-- Min Error -->\r\n            <mat-error *ngIf=\"(dynamicForm?.controls)[control.name]?.errors?.min\">\r\n              <span *ngIf=\"control.minError\">{{ control.minError }}</span>\r\n              <span *ngIf=\"!control.minError\"\r\n              >Minimum {{ control.min }} {{ control.label }}(s) required</span\r\n              >\r\n            </mat-error>\r\n            <mat-error *ngIf=\"(dynamicForm?.controls)[control.name]?.errors?.max\">\r\n              <span *ngIf=\"control.maxError\">{{ control.maxError }}</span>\r\n              <span *ngIf=\"!control.maxError\"\r\n              >Maximum {{ control.max }} {{ control.label }}(s) only\r\n                required</span\r\n              >\r\n            </mat-error>\r\n\r\n            <!-- Min length Error -->\r\n            <mat-error\r\n              *ngIf=\"(dynamicForm?.controls)[control.name]?.errors?.minlength\"\r\n            >\r\n              <span *ngIf=\"control.minlengthError\">{{\r\n                control.minlengthError\r\n                }}</span>\r\n              <span *ngIf=\"!control.minlengthError\"\r\n              >Minimum {{ control.minlength }} characters reuired for\r\n                {{ control.label }}</span\r\n              >\r\n            </mat-error>\r\n\r\n            <!-- Max Length Error -->\r\n            <mat-error\r\n              *ngIf=\"(dynamicForm?.controls)[control.name]?.errors?.maxlength\"\r\n            >\r\n              <span *ngIf=\"control.maxlengthError\">{{\r\n                control.maxlengthError\r\n                }}</span>\r\n              <span *ngIf=\"!control.maxlengthError\"\r\n              >Minimum {{ control.maxlength }} characters only reuired for\r\n                {{ control.label }}</span\r\n              >\r\n            </mat-error>\r\n\r\n            <!--todo : Pattern Error -->\r\n            <!--<mat-error\r\n              *ngIf=\"(dynamicForm?.controls)[control.name]?.errors?.pattern\"\r\n            >\r\n              <span *ngIf=\"control.patternError\">{{\r\n                control.patternError\r\n                }}</span>\r\n              <span *ngIf=\"!control.patternError\"\r\n              >Invalid {{ control.label }} pattern</span\r\n              >\r\n            </mat-error>-->\r\n\r\n            <mat-hint class=\"text-danger\" *ngIf=\"control.duplicateMessage\">\r\n              <span [innerHTML]=\"control.duplicateMessage\"></span>\r\n            </mat-hint>\r\n          </mat-form-field>\r\n        </ng-container>\r\n      </ng-container>\r\n    </div>\r\n  </div>\r\n</form>\r\n"
+        },
+        {
+            "name": "DynamicFormControllerComponent",
+            "id": "component-DynamicFormControllerComponent-b0d34b65790b1644d2a1f58a4c881d81",
+            "file": "projects/ksk/dynamic-form/src/lib/dynamic-form-controller/dynamic-form-controller.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ksk-dynamic-form-controller",
+            "styleUrls": [
+                "./dynamic-form-controller.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dynamic-form-controller.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "columnSize",
+                    "line": 29,
+                    "type": "[]"
+                },
+                {
+                    "name": "defaultValue",
+                    "line": 43,
+                    "type": "any"
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 41
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "line": 37
+                },
+                {
+                    "name": "multiple",
+                    "defaultValue": "false",
+                    "line": 42
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "''",
+                    "line": 38
+                },
+                {
+                    "name": "offsetSize",
+                    "line": 18,
+                    "type": "[]"
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "line": 39
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "line": 40
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "FORM_CONTROLLER_TYPE.TEXT",
+                    "line": 36,
+                    "type": "FORM_CONTROLLER_TYPE"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "_columnSize",
+                    "defaultValue": "[]",
+                    "type": "COLUMN_SIZE_TYPE[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "_offsetSize",
+                    "defaultValue": "[]",
+                    "type": "OFFSET_SIZE_TYPE[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "FORM_CONTROLLER_TYPE",
+                    "defaultValue": "FORM_CONTROLLER_TYPE",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 35
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [
+                {
+                    "name": "class",
+                    "defaultValue": "''",
+                    "line": 34
+                }
+            ],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, HostBinding, Input} from '@angular/core';\r\nimport {FORM_CONTROLLER_TYPE} from '../interface/form-controller.enum';\r\nimport {COLUMN_SIZE_TYPE} from '../interface/column-size.type';\r\nimport {OFFSET_SIZE_TYPE} from '../interface/offset-size.type';\r\n\r\n@Component({\r\n  selector: 'ksk-dynamic-form-controller',\r\n  templateUrl: './dynamic-form-controller.component.html',\r\n  styleUrls: ['./dynamic-form-controller.component.scss']\r\n})\r\nexport class DynamicFormControllerComponent {\r\n  private _offsetSize: OFFSET_SIZE_TYPE[] = [];\r\n  get offsetSize(): OFFSET_SIZE_TYPE[] {\r\n    return this._offsetSize;\r\n  }\r\n\r\n  @Input()\r\n  set offsetSize(value: OFFSET_SIZE_TYPE[]) {\r\n    this._offsetSize = value;\r\n    this.cssClassName = `${this._offsetSize && this._offsetSize.join(' ')} ${this._columnSize && this._columnSize.join(' ')}`;\r\n  }\r\n\r\n  private _columnSize: COLUMN_SIZE_TYPE[] = [];\r\n  get columnSize(): COLUMN_SIZE_TYPE[] {\r\n    return this._columnSize;\r\n  }\r\n\r\n  @Input()\r\n  set columnSize(value: COLUMN_SIZE_TYPE[]) {\r\n    this._columnSize = value;\r\n    this.cssClassName = `${this._offsetSize && this._offsetSize.join(' ')} ${this._columnSize && this._columnSize.join(' ')}`;\r\n  }\r\n\r\n  @HostBinding('class') cssClassName = '';\r\n  FORM_CONTROLLER_TYPE = FORM_CONTROLLER_TYPE;\r\n  @Input() type: FORM_CONTROLLER_TYPE = FORM_CONTROLLER_TYPE.TEXT;\r\n  @Input() label = '';\r\n  @Input() name = '';\r\n  @Input() placeholder = '';\r\n  @Input() required = false;\r\n  @Input() disabled = false;\r\n  @Input() multiple = false;\r\n  @Input() defaultValue: any;\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n  display: inline-block;\r\n}\r\n",
+                    "styleUrl": "./dynamic-form-controller.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "offsetSize": {
+                    "name": "offsetSize",
+                    "setSignature": {
+                        "name": "offsetSize",
+                        "type": "void",
+                        "args": [
+                            {
+                                "name": "value",
+                                "type": "[]"
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 18,
+                        "jsdoctags": [
+                            {
+                                "name": "value",
+                                "type": "[]",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "offsetSize",
+                        "type": "[]",
+                        "returnType": "OFFSET_SIZE_TYPE[]",
+                        "line": 13
+                    }
+                },
+                "columnSize": {
+                    "name": "columnSize",
+                    "setSignature": {
+                        "name": "columnSize",
+                        "type": "void",
+                        "args": [
+                            {
+                                "name": "value",
+                                "type": "[]"
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 29,
+                        "jsdoctags": [
+                            {
+                                "name": "value",
+                                "type": "[]",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "columnSize",
+                        "type": "[]",
+                        "returnType": "COLUMN_SIZE_TYPE[]",
+                        "line": 24
+                    }
+                }
+            },
+            "templateData": "<ng-container [ngSwitch]=\"type\">\r\n  <!-- ********************************************** EMAIL **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.EMAIL\">\r\n    <ng-container *ngTemplateOutlet=\"emailInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** COLOR **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.COLOR\">\r\n    <ng-container *ngTemplateOutlet=\"colorInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** DATE  **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.DATE\">\r\n    <ng-container *ngTemplateOutlet=\"dateInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** DATETIME  **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.DATETIME\">\r\n    <ng-container *ngTemplateOutlet=\"datetimeInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** MONTH **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.MONTH\">\r\n    <ng-container *ngTemplateOutlet=\"monthInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** NUMBER  **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.NUMBER\">\r\n    <ng-container *ngTemplateOutlet=\"numberInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** PASSWORD  **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.PASSWORD\">\r\n    <ng-container *ngTemplateOutlet=\"passwordInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** SEARCH  **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.SEARCH\">\r\n    <ng-container *ngTemplateOutlet=\"searchInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** TEL **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.TEL\">\r\n    <ng-container *ngTemplateOutlet=\"telInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** TEXT  **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.TEXT\">\r\n    <ng-container *ngTemplateOutlet=\"textInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** TIME  **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.TIME\">\r\n    <ng-container *ngTemplateOutlet=\"timeInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** URL **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.URL\">\r\n    <ng-container *ngTemplateOutlet=\"urlInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** WEEK  **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.WEEK\">\r\n    <ng-container *ngTemplateOutlet=\"weekInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n  <!-- ********************************************** SELECT  **********************************************  -->\r\n  <ng-container *ngSwitchCase=\"FORM_CONTROLLER_TYPE.SELECT\">\r\n    <ng-container *ngTemplateOutlet=\"selectInputTemplateRef\"></ng-container>\r\n  </ng-container>\r\n\r\n\r\n</ng-container>\r\n\r\n\r\n<!-- ********************************************** Email Input Template Ref **********************************************  -->\r\n<ng-template #emailInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [ngModel]=\"defaultValue\" email [placeholder]=\"placeholder\" [required]=\"required\"\r\n           [disabled]=\"disabled\"\r\n           autocomplete=\"off\" type=\"email\"/></mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** Color Input Template Ref **********************************************  -->\r\n<ng-template #colorInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [ngModel]=\"defaultValue\" [placeholder]=\"placeholder\" [required]=\"required\"\r\n           [disabled]=\"disabled\"\r\n           autocomplete=\"off\" type=\"color\"/></mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** Date Input Template Ref  **********************************************  -->\r\n<ng-template #dateInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [matDatepicker]=\"picker\" [ngModel]=\"defaultValue\" [placeholder]=\"placeholder\"\r\n           [required]=\"required\" [disabled]=\"disabled\" autocomplete=\"off\"/>\r\n    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n    <mat-datepicker #picker></mat-datepicker>\r\n  </mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** Datetime Input Template Ref  **********************************************  -->\r\n<ng-template #datetimeInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [ngModel]=\"defaultValue\" [placeholder]=\"placeholder\" [required]=\"required\"\r\n           [disabled]=\"disabled\"\r\n           autocomplete=\"off\" type=\"datetime-local\"/></mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** Month Input Template Ref **********************************************  -->\r\n<ng-template #monthInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [ngModel]=\"defaultValue\" [placeholder]=\"placeholder\" [required]=\"required\"\r\n           [disabled]=\"disabled\"\r\n           autocomplete=\"off\" type=\"month\"/></mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** Number Input Template Ref  **********************************************  -->\r\n<ng-template #numberInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [ngModel]=\"defaultValue\" [placeholder]=\"placeholder\" [required]=\"required\"\r\n           [disabled]=\"disabled\"\r\n           autocomplete=\"off\" type=\"number\"/></mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** Password Input Template Ref  **********************************************  -->\r\n<ng-template #passwordInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [ngModel]=\"defaultValue\" [placeholder]=\"placeholder\" [required]=\"required\"\r\n           [disabled]=\"disabled\"\r\n           autocomplete=\"off\" type=\"password\"/></mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** Search Input Template Ref  **********************************************  -->\r\n<ng-template #searchInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [ngModel]=\"defaultValue\" [placeholder]=\"placeholder\" [required]=\"required\"\r\n           [disabled]=\"disabled\"\r\n           autocomplete=\"off\" type=\"search\"/></mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** Tel Input Template Ref **********************************************  -->\r\n<ng-template #telInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [ngModel]=\"defaultValue\" [placeholder]=\"placeholder\" [required]=\"required\"\r\n           [disabled]=\"disabled\"\r\n           autocomplete=\"off\" type=\"tel\"/></mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** Text Input Template Ref  **********************************************  -->\r\n<ng-template #textInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [ngModel]=\"defaultValue\" [placeholder]=\"placeholder\" [required]=\"required\"\r\n           [disabled]=\"disabled\"\r\n           autocomplete=\"off\" type=\"text\"/></mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** Time Input Template Ref  **********************************************  -->\r\n<ng-template #timeInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [ngModel]=\"defaultValue\" [placeholder]=\"placeholder\" [required]=\"required\"\r\n           [disabled]=\"disabled\"\r\n           autocomplete=\"off\" type=\"time\"/></mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** Url Input Template Ref **********************************************  -->\r\n<ng-template #urlInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [ngModel]=\"defaultValue\" [placeholder]=\"placeholder\" [required]=\"required\"\r\n           [disabled]=\"disabled\"\r\n           autocomplete=\"off\" type=\"url\"/></mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** Week Input Template Ref  **********************************************  -->\r\n<ng-template #weekInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <input matInput [name]=\"name\" [ngModel]=\"defaultValue\" [placeholder]=\"placeholder\" [required]=\"required\"\r\n           [disabled]=\"disabled\"\r\n           autocomplete=\"off\" type=\"week\"/></mat-form-field>\r\n</ng-template>\r\n\r\n<!-- ********************************************** select Input Template Ref  **********************************************  -->\r\n<ng-template #selectInputTemplateRef>\r\n  <mat-form-field class=\"w-100\">\r\n    <mat-label>{{ label }}</mat-label>\r\n    <mat-select [name]=\"name\" [ngModel]=\"defaultValue\" [disabled]=\"disabled\" *ngIf=\"multiple\" multiple>\r\n      <mat-option [value]=\"'test1'\">Test 1</mat-option>\r\n      <mat-option [value]=\"'test2'\">Test 2</mat-option>\r\n      <mat-option [value]=\"'test3'\">Test 3</mat-option>\r\n      <mat-option [value]=\"'test4'\">Test 4</mat-option>\r\n      <mat-option [value]=\"'test5'\">Test 5</mat-option>\r\n    </mat-select>\r\n    <mat-select [name]=\"name\" [ngModel]=\"defaultValue\" [disabled]=\"disabled\" *ngIf=\"!multiple\">\r\n      <mat-option [value]=\"'test1'\">Test 1</mat-option>\r\n      <mat-option [value]=\"'test2'\">Test 2</mat-option>\r\n      <mat-option [value]=\"'test3'\">Test 3</mat-option>\r\n      <mat-option [value]=\"'test4'\">Test 4</mat-option>\r\n      <mat-option [value]=\"'test5'\">Test 5</mat-option>\r\n    </mat-select>\r\n  </mat-form-field>\r\n</ng-template>\r\n\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -209,56 +784,11 @@
                 }
             ],
             "stylesData": ""
-        },
-        {
-            "name": "TextInputComponent",
-            "id": "component-TextInputComponent-0ff874371f7ca631037fd1576781953c",
-            "file": "projects/ksk/text-input/src/lib/text-input.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "ksk-textInput",
-            "styleUrls": [],
-            "styles": [],
-            "template": "<div class=\"form-group\">\n  <label [for]=\"id\">{{label}}</label>\n  <input type=\"text\" class=\"form-control\" [id]=\"id\">\n  <small [id]=\"id+'Help'\" class=\"form-text text-muted\">{{help}}</small>\n</div>\n",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "help",
-                    "defaultValue": "''",
-                    "line": 18
-                },
-                {
-                    "name": "id",
-                    "defaultValue": "''",
-                    "line": 17
-                },
-                {
-                    "name": "label",
-                    "defaultValue": "''",
-                    "line": 16
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\n\n@Component({\n  selector: 'ksk-textInput',\n  template: `\n    <div class=\"form-group\">\n      <label [for]=\"id\">{{label}}</label>\n      <input type=\"text\" class=\"form-control\" [id]=\"id\">\n      <small [id]=\"id+'Help'\" class=\"form-text text-muted\">{{help}}</small>\n    </div>\n  `,\n  styles: []\n})\nexport class TextInputComponent {\n\n  @Input() label = '';\n  @Input() id = '';\n  @Input() help = '';\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": ""
         }
     ],
     "modules": [
         {
-            "name": "TextInputModule",
+            "name": "AppModule",
             "children": [
                 {
                     "type": "providers",
@@ -268,7 +798,83 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "TextInputComponent"
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "DynamicFormModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DynamicFormModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "DynamicFormComponent"
+                        },
+                        {
+                            "name": "DynamicFormControllerComponent"
                         }
                     ]
                 },
@@ -280,7 +886,10 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "TextInputComponent"
+                            "name": "DynamicFormComponent"
+                        },
+                        {
+                            "name": "DynamicFormControllerComponent"
                         }
                     ]
                 },
@@ -298,12 +907,68 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "ColorFormController",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.COLOR),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+            },
+            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ksk/text-input/src/test.ts",
+                "file": "projects/integration-testing/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "DateFormController",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.DATE),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+            },
+            {
+                "name": "DatetimeFormController",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.DATETIME),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+            },
+            {
+                "name": "EmailFormController",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.EMAIL),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/integration-testing/src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/integration-testing/src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "Large",
@@ -346,6 +1011,30 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "MonthFormController",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.MONTH),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+            },
+            {
+                "name": "NumberFormController",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.NUMBER),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+            },
+            {
+                "name": "PasswordFormController",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.PASSWORD),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -357,8 +1046,23 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ksk/text-input/src/test.ts",
+                "file": "projects/integration-testing/src/test.ts",
                 "type": "literal type"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/test.ts",
+                "type": "literal type"
+            },
+            {
+                "name": "SearchFormController",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.SEARCH),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
             },
             {
                 "name": "Secondary",
@@ -369,12 +1073,28 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "SelectFormController",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.SELECT),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n    multiple:boolean('multiple', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [multiple]=\"multiple\" [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+            },
+            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "TelFormController",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.TEL),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
             },
             {
                 "name": "Template",
@@ -401,32 +1121,344 @@
                 "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
             },
             {
-                "name": "Template",
+                "name": "TextFormController",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ksk/text-input/src/lib/text-input.stories.ts",
-                "type": "Story<TextInputComponent>",
-                "defaultValue": "(args: TextInputComponent) => ({\n  component: TextInputComponent,\n  props: args,\n})"
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.TEXT),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
             },
             {
-                "name": "TextInputDefaultValue",
+                "name": "TimeFormController",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ksk/text-input/src/lib/text-input.stories.ts",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.TIME),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+            },
+            {
+                "name": "UrlFormController",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.URL),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+            },
+            {
+                "name": "WeekFormController",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.WEEK),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
             }
         ],
-        "functions": [],
-        "typealiases": [],
-        "enumerations": [],
+        "functions": [
+            {
+                "name": "getDynamicFormController",
+                "file": "projects/ksk/dynamic-form/src/lib/interface/dynamic-form-controller.interface.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "description": "",
+                "args": [
+                    {
+                        "name": "type"
+                    },
+                    {
+                        "name": "label"
+                    },
+                    {
+                        "name": "value",
+                        "type": "any"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "placeholder"
+                    },
+                    {
+                        "name": "props",
+                        "type": "object"
+                    },
+                    {
+                        "name": "columnSize"
+                    },
+                    {
+                        "name": "offsetSize"
+                    }
+                ],
+                "returnType": "DynamicFormControllerInterface",
+                "jsdoctags": [
+                    {
+                        "name": "type",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "label",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "value",
+                        "type": "any",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "placeholder",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "props",
+                        "type": "object",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "columnSize",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "offsetSize",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
+        "typealiases": [
+            {
+                "name": "COLUMN_SIZE_TYPE",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"col-1\" | \"col-2\" | \"col-3\" | \"col-4\" | \"col-5\" | \"col-6\" | \"col-7\" | \"col-8\" | \"col-9\" | \"col-10\" | \"col-11\" | \"col-12\" | \"col-xs-1\" | \"col-xs-2\" | \"col-xs-3\" | \"col-xs-4\" | \"col-xs-5\" | \"col-xs-6\" | \"col-xs-7\" | \"col-xs-8\" | \"col-xs-9\" | \"col-xs-10\" | \"col-xs-11\" | \"col-xs-12\" | \"col-sm-1\" | \"col-sm-2\" | \"col-sm-3\" | \"col-sm-4\" | \"col-sm-5\" | \"col-sm-6\" | \"col-sm-7\" | \"col-sm-8\" | \"col-sm-9\" | \"col-sm-10\" | \"col-sm-11\" | \"col-sm-12\" | \"col-md-1\" | \"col-md-2\" | \"col-md-3\" | \"col-md-4\" | \"col-md-5\" | \"col-md-6\" | \"col-md-7\" | \"col-md-8\" | \"col-md-9\" | \"col-md-10\" | \"col-md-11\" | \"col-md-12\" | \"col-lg-1\" | \"col-lg-2\" | \"col-lg-3\" | \"col-lg-4\" | \"col-lg-5\" | \"col-lg-6\" | \"col-lg-7\" | \"col-lg-8\" | \"col-lg-9\" | \"col-lg-10\" | \"col-lg-11\" | \"col-lg-12\" | \"col-xl-1\" | \"col-xl-2\" | \"col-xl-3\" | \"col-xl-4\" | \"col-xl-5\" | \"col-xl-6\" | \"col-xl-7\" | \"col-xl-8\" | \"col-xl-9\" | \"col-xl-10\" | \"col-xl-11\" | \"col-xl-12\"",
+                "file": "projects/ksk/dynamic-form/src/lib/interface/column-size.type.ts",
+                "description": "",
+                "kind": 168
+            },
+            {
+                "name": "OFFSET_SIZE_TYPE",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"offset-0\" | \"offset-1\" | \"offset-2\" | \"offset-3\" | \"offset-4\" | \"offset-5\" | \"offset-6\" | \"offset-7\" | \"offset-8\" | \"offset-9\" | \"offset-10\" | \"offset-11\" | \"offset-12\" | \"offset-xs-0\" | \"offset-xs-1\" | \"offset-xs-2\" | \"offset-xs-3\" | \"offset-xs-4\" | \"offset-xs-5\" | \"offset-xs-6\" | \"offset-xs-7\" | \"offset-xs-8\" | \"offset-xs-9\" | \"offset-xs-10\" | \"offset-xs-11\" | \"offset-xs-12\" | \"offset-sm-0\" | \"offset-sm-1\" | \"offset-sm-2\" | \"offset-sm-3\" | \"offset-sm-4\" | \"offset-sm-5\" | \"offset-sm-6\" | \"offset-sm-7\" | \"offset-sm-8\" | \"offset-sm-9\" | \"offset-sm-10\" | \"offset-sm-11\" | \"offset-sm-12\" | \"offset-md-0\" | \"offset-md-1\" | \"offset-md-2\" | \"offset-md-3\" | \"offset-md-4\" | \"offset-md-5\" | \"offset-md-6\" | \"offset-md-7\" | \"offset-md-8\" | \"offset-md-9\" | \"offset-md-10\" | \"offset-md-11\" | \"offset-md-12\" | \"offset-lg-0\" | \"offset-lg-1\" | \"offset-lg-2\" | \"offset-lg-3\" | \"offset-lg-4\" | \"offset-lg-5\" | \"offset-lg-6\" | \"offset-lg-7\" | \"offset-lg-8\" | \"offset-lg-9\" | \"offset-lg-10\" | \"offset-lg-11\" | \"offset-lg-12\" | \"offset-xl-0\" | \"offset-xl-1\" | \"offset-xl-2\" | \"offset-xl-3\" | \"offset-xl-4\" | \"offset-xl-5\" | \"offset-xl-6\" | \"offset-xl-7\" | \"offset-xl-8\" | \"offset-xl-9\" | \"offset-xl-10\" | \"offset-xl-11\" | \"offset-xl-12\"",
+                "file": "projects/ksk/dynamic-form/src/lib/interface/offset-size.type.ts",
+                "description": "",
+                "kind": 168
+            }
+        ],
+        "enumerations": [
+            {
+                "name": "FORM_CONTROLLER_TYPE",
+                "childs": [
+                    {
+                        "name": "EMAIL",
+                        "value": "email"
+                    },
+                    {
+                        "name": "COLOR",
+                        "value": "color"
+                    },
+                    {
+                        "name": "DATE",
+                        "value": "date"
+                    },
+                    {
+                        "name": "DATETIME",
+                        "value": "datetime"
+                    },
+                    {
+                        "name": "MONTH",
+                        "value": "month"
+                    },
+                    {
+                        "name": "NUMBER",
+                        "value": "number"
+                    },
+                    {
+                        "name": "PASSWORD",
+                        "value": "password"
+                    },
+                    {
+                        "name": "SEARCH",
+                        "value": "search"
+                    },
+                    {
+                        "name": "TEL",
+                        "value": "tel"
+                    },
+                    {
+                        "name": "TEXT",
+                        "value": "text"
+                    },
+                    {
+                        "name": "TIME",
+                        "value": "time"
+                    },
+                    {
+                        "name": "URL",
+                        "value": "url"
+                    },
+                    {
+                        "name": "WEEK",
+                        "value": "week"
+                    },
+                    {
+                        "name": "SELECT",
+                        "value": "select"
+                    },
+                    {
+                        "name": "RADIO",
+                        "value": "radio"
+                    },
+                    {
+                        "name": "CHIPS",
+                        "value": "chips"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "description": "",
+                "file": "projects/ksk/dynamic-form/src/lib/interface/form-controller.enum.ts"
+            }
+        ],
         "groupedVariables": {
-            "projects/ksk/text-input/src/test.ts": [
+            "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts": [
+                {
+                    "name": "ColorFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.COLOR),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "DateFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.DATE),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "DatetimeFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.DATETIME),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "EmailFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.EMAIL),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "MonthFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.MONTH),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "NumberFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.NUMBER),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "PasswordFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.PASSWORD),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "SearchFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.SEARCH),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "SelectFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.SELECT),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n    multiple:boolean('multiple', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [multiple]=\"multiple\" [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "TelFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.TEL),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "TextFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.TEXT),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "TimeFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.TIME),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "UrlFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.URL),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                },
+                {
+                    "name": "WeekFormController",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\r\n  component: DynamicFormControllerComponent,\r\n  props: {\r\n    type: radios('type', FORM_CONTROLLER_TYPE, FORM_CONTROLLER_TYPE.WEEK),\r\n    label: text('label', 'label'),\r\n    columnSize:['col-md-4'],\r\n    offsetSize:[ 'offset-md-4'],\r\n    name:text('name',''),\r\n    placeholder:text('placeholder','Place Holder'),\r\n    disabled:boolean('disabled', false),\r\n    required:boolean('required', false),\r\n  },\r\n  template: `\r\n      <div class=\"row\">\r\n        <ksk-dynamic-form-controller [placeholder]=\"placeholder\" [required]=\"required\" [name]=\"name\" [disabled]=\"disabled\" [offsetSize]=\"offsetSize\" [columnSize]=\"columnSize\" [type]=\"type\" [label]=\"label\"></ksk-dynamic-form-controller>\r\n      </div>\r\n   `\r\n})"
+                }
+            ],
+            "projects/integration-testing/src/test.ts": [
                 {
                     "name": "context",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ksk/text-input/src/test.ts",
+                    "file": "projects/integration-testing/src/test.ts",
                     "type": "",
                     "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
                 },
@@ -434,8 +1466,45 @@
                     "name": "require",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ksk/text-input/src/test.ts",
+                    "file": "projects/integration-testing/src/test.ts",
                     "type": "literal type"
+                }
+            ],
+            "projects/ksk/dynamic-form/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ksk/dynamic-form/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/integration-testing/src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/integration-testing/src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "projects/integration-testing/src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/integration-testing/src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "stories/Button.stories.ts": [
@@ -531,66 +1600,251 @@
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
                 }
-            ],
-            "projects/ksk/text-input/src/lib/text-input.stories.ts": [
+            ]
+        },
+        "groupedFunctions": {
+            "projects/ksk/dynamic-form/src/lib/interface/dynamic-form-controller.interface.ts": [
                 {
-                    "name": "Template",
+                    "name": "getDynamicFormController",
+                    "file": "projects/ksk/dynamic-form/src/lib/interface/dynamic-form-controller.interface.ts",
                     "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ksk/text-input/src/lib/text-input.stories.ts",
-                    "type": "Story<TextInputComponent>",
-                    "defaultValue": "(args: TextInputComponent) => ({\n  component: TextInputComponent,\n  props: args,\n})"
-                },
-                {
-                    "name": "TextInputDefaultValue",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ksk/text-input/src/lib/text-input.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "subtype": "function",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "type"
+                        },
+                        {
+                            "name": "label"
+                        },
+                        {
+                            "name": "value",
+                            "type": "any"
+                        },
+                        {
+                            "name": "name"
+                        },
+                        {
+                            "name": "placeholder"
+                        },
+                        {
+                            "name": "props",
+                            "type": "object"
+                        },
+                        {
+                            "name": "columnSize"
+                        },
+                        {
+                            "name": "offsetSize"
+                        }
+                    ],
+                    "returnType": "DynamicFormControllerInterface",
+                    "jsdoctags": [
+                        {
+                            "name": "type",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "label",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "name",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "placeholder",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "props",
+                            "type": "object",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "columnSize",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "offsetSize",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ]
         },
-        "groupedFunctions": {},
-        "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedEnumerations": {
+            "projects/ksk/dynamic-form/src/lib/interface/form-controller.enum.ts": [
+                {
+                    "name": "FORM_CONTROLLER_TYPE",
+                    "childs": [
+                        {
+                            "name": "EMAIL",
+                            "value": "email"
+                        },
+                        {
+                            "name": "COLOR",
+                            "value": "color"
+                        },
+                        {
+                            "name": "DATE",
+                            "value": "date"
+                        },
+                        {
+                            "name": "DATETIME",
+                            "value": "datetime"
+                        },
+                        {
+                            "name": "MONTH",
+                            "value": "month"
+                        },
+                        {
+                            "name": "NUMBER",
+                            "value": "number"
+                        },
+                        {
+                            "name": "PASSWORD",
+                            "value": "password"
+                        },
+                        {
+                            "name": "SEARCH",
+                            "value": "search"
+                        },
+                        {
+                            "name": "TEL",
+                            "value": "tel"
+                        },
+                        {
+                            "name": "TEXT",
+                            "value": "text"
+                        },
+                        {
+                            "name": "TIME",
+                            "value": "time"
+                        },
+                        {
+                            "name": "URL",
+                            "value": "url"
+                        },
+                        {
+                            "name": "WEEK",
+                            "value": "week"
+                        },
+                        {
+                            "name": "SELECT",
+                            "value": "select"
+                        },
+                        {
+                            "name": "RADIO",
+                            "value": "radio"
+                        },
+                        {
+                            "name": "CHIPS",
+                            "value": "chips"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "description": "",
+                    "file": "projects/ksk/dynamic-form/src/lib/interface/form-controller.enum.ts"
+                }
+            ]
+        },
+        "groupedTypeAliases": {
+            "projects/ksk/dynamic-form/src/lib/interface/column-size.type.ts": [
+                {
+                    "name": "COLUMN_SIZE_TYPE",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"col-1\" | \"col-2\" | \"col-3\" | \"col-4\" | \"col-5\" | \"col-6\" | \"col-7\" | \"col-8\" | \"col-9\" | \"col-10\" | \"col-11\" | \"col-12\" | \"col-xs-1\" | \"col-xs-2\" | \"col-xs-3\" | \"col-xs-4\" | \"col-xs-5\" | \"col-xs-6\" | \"col-xs-7\" | \"col-xs-8\" | \"col-xs-9\" | \"col-xs-10\" | \"col-xs-11\" | \"col-xs-12\" | \"col-sm-1\" | \"col-sm-2\" | \"col-sm-3\" | \"col-sm-4\" | \"col-sm-5\" | \"col-sm-6\" | \"col-sm-7\" | \"col-sm-8\" | \"col-sm-9\" | \"col-sm-10\" | \"col-sm-11\" | \"col-sm-12\" | \"col-md-1\" | \"col-md-2\" | \"col-md-3\" | \"col-md-4\" | \"col-md-5\" | \"col-md-6\" | \"col-md-7\" | \"col-md-8\" | \"col-md-9\" | \"col-md-10\" | \"col-md-11\" | \"col-md-12\" | \"col-lg-1\" | \"col-lg-2\" | \"col-lg-3\" | \"col-lg-4\" | \"col-lg-5\" | \"col-lg-6\" | \"col-lg-7\" | \"col-lg-8\" | \"col-lg-9\" | \"col-lg-10\" | \"col-lg-11\" | \"col-lg-12\" | \"col-xl-1\" | \"col-xl-2\" | \"col-xl-3\" | \"col-xl-4\" | \"col-xl-5\" | \"col-xl-6\" | \"col-xl-7\" | \"col-xl-8\" | \"col-xl-9\" | \"col-xl-10\" | \"col-xl-11\" | \"col-xl-12\"",
+                    "file": "projects/ksk/dynamic-form/src/lib/interface/column-size.type.ts",
+                    "description": "",
+                    "kind": 168
+                }
+            ],
+            "projects/ksk/dynamic-form/src/lib/interface/offset-size.type.ts": [
+                {
+                    "name": "OFFSET_SIZE_TYPE",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"offset-0\" | \"offset-1\" | \"offset-2\" | \"offset-3\" | \"offset-4\" | \"offset-5\" | \"offset-6\" | \"offset-7\" | \"offset-8\" | \"offset-9\" | \"offset-10\" | \"offset-11\" | \"offset-12\" | \"offset-xs-0\" | \"offset-xs-1\" | \"offset-xs-2\" | \"offset-xs-3\" | \"offset-xs-4\" | \"offset-xs-5\" | \"offset-xs-6\" | \"offset-xs-7\" | \"offset-xs-8\" | \"offset-xs-9\" | \"offset-xs-10\" | \"offset-xs-11\" | \"offset-xs-12\" | \"offset-sm-0\" | \"offset-sm-1\" | \"offset-sm-2\" | \"offset-sm-3\" | \"offset-sm-4\" | \"offset-sm-5\" | \"offset-sm-6\" | \"offset-sm-7\" | \"offset-sm-8\" | \"offset-sm-9\" | \"offset-sm-10\" | \"offset-sm-11\" | \"offset-sm-12\" | \"offset-md-0\" | \"offset-md-1\" | \"offset-md-2\" | \"offset-md-3\" | \"offset-md-4\" | \"offset-md-5\" | \"offset-md-6\" | \"offset-md-7\" | \"offset-md-8\" | \"offset-md-9\" | \"offset-md-10\" | \"offset-md-11\" | \"offset-md-12\" | \"offset-lg-0\" | \"offset-lg-1\" | \"offset-lg-2\" | \"offset-lg-3\" | \"offset-lg-4\" | \"offset-lg-5\" | \"offset-lg-6\" | \"offset-lg-7\" | \"offset-lg-8\" | \"offset-lg-9\" | \"offset-lg-10\" | \"offset-lg-11\" | \"offset-lg-12\" | \"offset-xl-0\" | \"offset-xl-1\" | \"offset-xl-2\" | \"offset-xl-3\" | \"offset-xl-4\" | \"offset-xl-5\" | \"offset-xl-6\" | \"offset-xl-7\" | \"offset-xl-8\" | \"offset-xl-9\" | \"offset-xl-10\" | \"offset-xl-11\" | \"offset-xl-12\"",
+                    "file": "projects/ksk/dynamic-form/src/lib/interface/offset-size.type.ts",
+                    "description": "",
+                    "kind": 168
+                }
+            ]
+        }
     },
-    "routes": [],
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "projects/integration-testing/src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [],
+                "kind": "module"
+            }
+        ]
+    },
     "coverage": {
-        "count": 4,
+        "count": 2,
         "status": "low",
         "files": [
             {
-                "filePath": "projects/ksk/text-input/src/lib/text-input.component.ts",
+                "filePath": "projects/integration-testing/src/app/app.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "TextInputComponent",
+                "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
-                "filePath": "projects/ksk/text-input/src/lib/text-input.stories.ts",
+                "filePath": "projects/integration-testing/src/environments/environment.prod.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "environment",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/ksk/text-input/src/lib/text-input.stories.ts",
+                "filePath": "projects/integration-testing/src/environments/environment.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "TextInputDefaultValue",
+                "name": "environment",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/ksk/text-input/src/test.ts",
+                "filePath": "projects/integration-testing/src/test.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -600,7 +1854,203 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ksk/text-input/src/test.ts",
+                "filePath": "projects/integration-testing/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form-controller/dynamic-form-controller.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DynamicFormControllerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ColorFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DateFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DatetimeFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "EmailFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MonthFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NumberFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PasswordFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SearchFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SelectFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TelFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TimeFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "UrlFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WeekFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/dynamic-form/dynamic-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DynamicFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/interface/dynamic-form-controller.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "DynamicFormControllerInterface",
+                "coveragePercent": 0,
+                "coverageCount": "0/24",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/lib/interface/dynamic-form-controller.interface.ts",
+                "type": "function",
+                "linksubtype": "function",
+                "name": "getDynamicFormController",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ksk/dynamic-form/src/test.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

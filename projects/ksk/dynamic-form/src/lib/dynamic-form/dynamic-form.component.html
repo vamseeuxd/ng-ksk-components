@@ -1,0 +1,130 @@
+<form #dynamicForm="ngForm" [class]="formClass">
+  <div class="row">
+
+    <div
+      [class]="control.columnSize ? control.columnSize : defaultColumnClass"
+      *ngFor="let control of getFormControls()"
+    >
+      <div class="col-12">control.type : {{control.type}}</div>
+      <ng-container [ngSwitch]="true">
+        <ng-container
+          *ngSwitchCase="
+            (control.type == 'email' ||
+              control.type == 'color' ||
+              control.type == 'date' ||
+              control.type == 'datetime-local' ||
+              control.type == 'month' ||
+              control.type == 'number' ||
+              control.type == 'password' ||
+              control.type == 'search' ||
+              control.type == 'tel' ||
+              control.type == 'text' ||
+              control.type == 'time' ||
+              control.type == 'url' ||
+              control.type == 'week') &&
+            !control.hide
+          "
+        >
+          <mat-form-field [class]="control.controllerClass">
+            <mat-label>{{ control.label }}</mat-label>
+
+            <input
+              matInput
+              [(ngModel)]="control.defaultValue"
+              autocomplete="off"
+              [email]="control?.type == 'email'"
+              [name]="control.name"
+              [disabled]="control?.disabled"
+              [required]="control?.required"
+              [minlength]="control?.minlength"
+              [maxlength]="control?.maxlength"
+              [min]="control?.min"
+              (change)="change.emit({ control: control, form: dynamicForm })"
+              [max]="control?.max"
+              [pattern]="control?.pattern"
+              [type]="control?.type"
+              [placeholder]="control?.placeholder"
+            />
+
+            <!-- Required Error -->
+            <mat-error
+              *ngIf="(dynamicForm?.controls)[control.name]?.errors?.required"
+            >
+              <span *ngIf="control.requiredError">{{
+                control.requiredError
+                }}</span>
+              <span *ngIf="!control.requiredError"
+              >{{ control.label }} is required</span
+              >
+            </mat-error>
+
+            <!-- Email Error -->
+            <mat-error *ngIf="(dynamicForm?.controls)[control.name]?.errors?.email">
+              <span *ngIf="control.emailError">{{ control.emailError }}</span>
+              <span *ngIf="!control.emailError"
+              >provide valid {{ control.label }}</span
+              >
+            </mat-error>
+
+            <!-- Min Error -->
+            <mat-error *ngIf="(dynamicForm?.controls)[control.name]?.errors?.min">
+              <span *ngIf="control.minError">{{ control.minError }}</span>
+              <span *ngIf="!control.minError"
+              >Minimum {{ control.min }} {{ control.label }}(s) required</span
+              >
+            </mat-error>
+            <mat-error *ngIf="(dynamicForm?.controls)[control.name]?.errors?.max">
+              <span *ngIf="control.maxError">{{ control.maxError }}</span>
+              <span *ngIf="!control.maxError"
+              >Maximum {{ control.max }} {{ control.label }}(s) only
+                required</span
+              >
+            </mat-error>
+
+            <!-- Min length Error -->
+            <mat-error
+              *ngIf="(dynamicForm?.controls)[control.name]?.errors?.minlength"
+            >
+              <span *ngIf="control.minlengthError">{{
+                control.minlengthError
+                }}</span>
+              <span *ngIf="!control.minlengthError"
+              >Minimum {{ control.minlength }} characters reuired for
+                {{ control.label }}</span
+              >
+            </mat-error>
+
+            <!-- Max Length Error -->
+            <mat-error
+              *ngIf="(dynamicForm?.controls)[control.name]?.errors?.maxlength"
+            >
+              <span *ngIf="control.maxlengthError">{{
+                control.maxlengthError
+                }}</span>
+              <span *ngIf="!control.maxlengthError"
+              >Minimum {{ control.maxlength }} characters only reuired for
+                {{ control.label }}</span
+              >
+            </mat-error>
+
+            <!--todo : Pattern Error -->
+            <!--<mat-error
+              *ngIf="(dynamicForm?.controls)[control.name]?.errors?.pattern"
+            >
+              <span *ngIf="control.patternError">{{
+                control.patternError
+                }}</span>
+              <span *ngIf="!control.patternError"
+              >Invalid {{ control.label }} pattern</span
+              >
+            </mat-error>-->
+
+            <mat-hint class="text-danger" *ngIf="control.duplicateMessage">
+              <span [innerHTML]="control.duplicateMessage"></span>
+            </mat-hint>
+          </mat-form-field>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</form>

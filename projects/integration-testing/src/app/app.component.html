@@ -1,0 +1,340 @@
+<div class="container-fluid">
+  <form #sampleForm="ngForm" class="w-100 pt-3">
+    <mat-tab-group class="border" dynamicHeight>
+      <!--  **************************************  Basic Details TAB  **************************************  -->
+      <mat-tab [disabled]="!showTabs.basicDetails" label="Basic Details">
+
+        <div class="container-fluid border-right-0 border-left-0">
+          <div class="row pt-4">
+            <!--  **********************************  Type  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Type</mat-label>
+                <mat-select autofocus (ngModelChange)="onTypeChange(sampleForm.value.type)" [ngModel]="value.type" required
+                            [disabled]="!showInfo.showType" name="type">
+                  <mat-option value="email">email</mat-option>
+                  <mat-option value="color">color</mat-option>
+                  <mat-option value="date">date</mat-option>
+                  <mat-option value="datetime">datetime</mat-option>
+                  <mat-option value="month">month</mat-option>
+                  <mat-option value="number">number</mat-option>
+                  <mat-option value="password">password</mat-option>
+                  <mat-option value="search">search</mat-option>
+                  <mat-option value="tel">tel</mat-option>
+                  <mat-option value="text">text</mat-option>
+                  <mat-option value="time">time</mat-option>
+                  <mat-option value="url">url</mat-option>
+                  <mat-option value="week">week</mat-option>
+                  <mat-option value="select">select</mat-option>
+                  <mat-option value="radio">radio</mat-option>
+                  <mat-option value="chips">chips</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Type  **********************************  -->
+
+            <!--  **********************************  Name  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Name</mat-label>
+                <input autocomplete="off" [ngModel]="value.name" type="text" matInput required [disabled]="!showInfo.showName"
+                       name="name"
+                       placeholder="Name">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Name  **********************************  -->
+
+            <!--  **********************************  Label  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Label</mat-label>
+                <input autocomplete="off" [ngModel]="value.label" type="text" matInput required [disabled]="!showInfo.showLabel"
+                       name="label" placeholder="Label">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Label  **********************************  -->
+
+            <!--  **********************************  Value  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Value</mat-label>
+                <input autocomplete="off" [ngModel]="value.value" type="text" matInput required [disabled]="!showInfo.showValue"
+                       name="value" placeholder="Value">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Value  **********************************  -->
+
+            <!--  **********************************  Placeholder  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Placeholder</mat-label>
+                <input autocomplete="off" [ngModel]="value.placeholder" type="text" matInput [disabled]="!showInfo.showPlaceholder"
+                       name="placeholder" placeholder="Placeholder">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Placeholder  **********************************  -->
+
+            <!--  **********************************  Controller Class  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Controller Class</mat-label>
+                <input autocomplete="off" type="text" [ngModel]="value.controllerClass" matInput
+                       [disabled]="!showInfo.showControllerClass"
+                       name="controllerClass" placeholder="Controller Class">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Controller Class  **********************************  -->
+
+            <!--  **********************************  Column Class  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Column Class</mat-label>
+                <input autocomplete="off" [ngModel]="value.columnClass" type="text" matInput [disabled]="!showInfo.showColumnClass"
+                       name="columnClass" placeholder="Column Class">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Column Class  **********************************  -->
+
+            <!--  **********************************  Hide / Show  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3 pt-4">
+              <mat-checkbox [ngModel]="value.hide" [disabled]="!showInfo.showHide" name="hide">Hide</mat-checkbox>
+            </div>
+            <!--  **********************************  Hide / Show  **********************************  -->
+
+            <!--  **********************************  Show in Grid / Hide in Grid  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3 pt-4">
+              <mat-checkbox [ngModel]="value.showInGrid" [disabled]="!showInfo.showShowInGrid" name="showInGrid">Show in Grid / Hide in Grid
+              </mat-checkbox>
+            </div>
+            <!--  **********************************  Show in Grid / Hide in Grid  **********************************  -->
+
+            <!--  **********************************  Disable or Enable  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3 pt-4">
+              <mat-checkbox [ngModel]="value.disabled" [disabled]="!showInfo.showDisabled"  name="disabled">Disable or Enable</mat-checkbox>
+            </div>
+            <!--  **********************************  Disable or Enable  **********************************  -->
+
+            <!--  **********************************  Multiple / Single Selection  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3 pt-4">
+              <mat-checkbox [ngModel]="value.multiple" [disabled]="!showInfo.showMultiple" name="multiple">Multiple / Single Selection
+              </mat-checkbox>
+            </div>
+            <!--  **********************************  Multiple / Single Selection  **********************************  -->
+
+          </div>
+        </div>
+
+      </mat-tab>
+      <!--  **************************************  Basic Details TAB  **************************************  -->
+
+
+      <!--  ***********************************  Required Validation TAB  ***********************************  -->
+      <mat-tab [disabled]="!showTabs.requiredValidation" label="Required Validation">
+        <div class="container-fluid border-right-0 border-left-0">
+          <div class="row pt-4">
+            <!--  **********************************  Required or No Required  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3 pt-4">
+              <mat-checkbox [ngModel]="value.required" [disabled]="!showInfo.showRequired" name="required">Required or Optional
+              </mat-checkbox>
+            </div>
+
+            <!--  **********************************  Required or No Required  **********************************  -->
+
+            <!--  **********************************  Required Error  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Required Error</mat-label>
+                <input autocomplete="off" [ngModel]="value.requiredError" type="text" matInput [disabled]="!showInfo.showRequiredError"
+                       name="requiredError" placeholder="Required Error">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Required Error  **********************************  -->
+          </div>
+        </div>
+      </mat-tab>
+      <!--  ***********************************  Required Validation TAB  ***********************************  -->
+
+
+      <!--  *****************************************  Min Max TAB  *****************************************  -->
+      <mat-tab [disabled]="!showTabs.minMaxValidation" label="Min Max Validation">
+        <div class="container-fluid border-right-0 border-left-0">
+
+          <div class="row pt-4">
+            <!--  **********************************  Min Length  **********************************  -->
+            <div class="col-md-4 offset-md-2 col-sm-6 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Min Length</mat-label>
+                <input autocomplete="off" [ngModel]="value.minlength" type="number" matInput [disabled]="!showInfo.showMinlength"
+                       name="minlength" placeholder="Min Length">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Min Length  **********************************  -->
+
+            <!--  **********************************  Min Length Error  **********************************  -->
+            <div class="col-md-4 col-sm-6 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Min Length Error</mat-label>
+                <input autocomplete="off" [ngModel]="value.minlengthError" type="text" matInput [disabled]="!showInfo.showMinlengthError"
+                       name="minlengthError" placeholder="Min Length Error">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Min Length Error  **********************************  -->
+
+            <!--  **********************************  Max Length  **********************************  -->
+            <div class="col-md-4 offset-md-2 col-sm-6 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Max Length</mat-label>
+                <input autocomplete="off" [ngModel]="value.maxlength" type="number" matInput [disabled]="!showInfo.showMaxlength"
+                       name="maxlength" placeholder="Max Length">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Max Length  **********************************  -->
+
+            <!--  **********************************  Max Length Error  **********************************  -->
+            <div class="col-md-4 col-sm-6 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Max Length Error</mat-label>
+                <input autocomplete="off" [ngModel]="value.maxlengthError" type="text" matInput [disabled]="!showInfo.showMaxlengthError"
+                       name="maxlengthError" placeholder="Max Length Error">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Max Length Error  **********************************  -->
+
+            <!--  **********************************  Min  **********************************  -->
+            <div class="col-md-4 offset-md-2 col-sm-6 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Min</mat-label>
+                <input autocomplete="off" [ngModel]="value.min" type="number" matInput [disabled]="!showInfo.showMin" name="min"
+                       placeholder="Min">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Min  **********************************  -->
+
+            <!--  **********************************  Min Error  **********************************  -->
+            <div class="col-md-4 col-sm-6 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Min Error</mat-label>
+                <input autocomplete="off" [ngModel]="value.minError" type="text" matInput [disabled]="!showInfo.showMinError"
+                       name="minError"
+                       placeholder="Min Error">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Min Error  **********************************  -->
+
+            <!--  **********************************  Max  **********************************  -->
+            <div class="col-md-4 offset-md-2 col-sm-6 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Max</mat-label>
+                <input autocomplete="off" [ngModel]="value.max" type="number" matInput [disabled]="!showInfo.showMax" name="max"
+                       placeholder="Max">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Max  **********************************  -->
+
+            <!--  **********************************  Max Error  **********************************  -->
+            <div class="col-md-4 col-sm-6 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Max Error</mat-label>
+                <input autocomplete="off" [ngModel]="value.maxError" type="text" matInput [disabled]="!showInfo.showMaxError"
+                       name="maxError"
+                       placeholder="Max Error">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Max Error  **********************************  -->
+          </div>
+        </div>
+      </mat-tab>
+      <!--  *****************************************  Min Max TAB  *****************************************  -->
+
+
+      <!--  ***********************************  Pattern Validation TAB  ***********************************  -->
+      <mat-tab [disabled]="!showTabs.patternValidation" label="Pattern Validation">
+        <div class="container-fluid border-right-0 border-left-0">
+          <div class="row pt-4">
+            <!--  **********************************  Pattern  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Pattern</mat-label>
+                <input autocomplete="off" [ngModel]="value.pattern" type="text" matInput [disabled]="!showInfo.showPattern" name="pattern"
+                       placeholder="Pattern">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Pattern  **********************************  -->
+
+            <!--  **********************************  Pattern Error  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Pattern Error</mat-label>
+                <input autocomplete="off" [ngModel]="value.patternError" type="text" matInput [disabled]="!showInfo.showPatternError"
+                       name="patternError" placeholder="Pattern Error">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Pattern Error  **********************************  -->
+          </div>
+        </div>
+      </mat-tab>
+      <!--  ***********************************  Pattern Validation TAB  ***********************************  -->
+
+
+      <!--  ************************************  Email Validation TAB  ************************************  -->
+      <mat-tab [disabled]="!showTabs.emailValidation" label="Email Validation">
+        <div class="container-fluid border-right-0 border-left-0">
+          <!--  **********************************  Email Error  **********************************  -->
+          <div class="row pt-4">
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Email Error</mat-label>
+                <input autocomplete="off" [ngModel]="value.emailError" type="text" matInput [disabled]="!showInfo.showEmailError"
+                       name="emailError" placeholder="Email Error">
+              </mat-form-field>
+            </div>
+          </div>
+          <!--  **********************************  Email Error  **********************************  -->
+        </div>
+      </mat-tab>
+      <!--  ************************************  Email Validation TAB  ************************************  -->
+
+
+      <!--  **********************************  Duplicate Validation TAB  **********************************  -->
+      <mat-tab [disabled]="!showTabs.duplicateValidation" label="Duplicate Validation">
+        <div class="container-fluid border-right-0 border-left-0">
+          <!--  **********************************  Duplicate Message  **********************************  -->
+          <div class="row pt-4">
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Duplicate Message</mat-label>
+                <input autocomplete="off" [ngModel]="value.duplicateMessage" type="text" matInput [disabled]="!showInfo.showDuplicateMessage"
+                       name="duplicateMessage" placeholder="Duplicate Message">
+              </mat-form-field>
+            </div>
+          </div>
+          <!--  **********************************  Duplicate Message  **********************************  -->
+        </div>
+      </mat-tab>
+      <!--  **********************************  Duplicate Validation TAB  **********************************  -->
+
+
+      <!--  *************************************  Data Provider TAB  *************************************  -->
+      <mat-tab [disabled]="!showTabs.dataProvider" label="Data Provider">
+        <div class="container-fluid border-right-0 border-left-0">
+          <div class="row pt-4">
+            <!--  **********************************  Data Provider  **********************************  -->
+            <div class="col-md-4 col-sm-6 col-lg-3 px-4 mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Data Provider</mat-label>
+                <input autocomplete="off" [ngModel]="value.dataProvider" type="text" matInput [disabled]="!showInfo.showDataProvider"
+                       name="dataProvider" placeholder="Data Provider">
+              </mat-form-field>
+            </div>
+            <!--  **********************************  Data Provider  **********************************  -->
+          </div>
+        </div>
+      </mat-tab>
+      <!--  *************************************  Data Provider TAB  *************************************  -->
+
+    </mat-tab-group>
+  </form>
+  <div class="container-fluid">
+    <pre class="w-100 bg-light p-4 d-inline-block border mt-3">{{sampleForm.value | json}}</pre>
+  </div>
+</div>

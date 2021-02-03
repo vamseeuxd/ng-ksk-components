@@ -5,40 +5,160 @@
   "projects": {
     "@ksk/textInput": {
       "projectType": "library",
-      "root": "projects/ksk/text-input",
-      "sourceRoot": "projects/ksk/text-input/src",
+      "root": "projects/ksk/dynamic-form",
+      "sourceRoot": "projects/ksk/dynamic-form/src",
       "prefix": "ksk",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/ksk/text-input/tsconfig.lib.json",
-            "project": "projects/ksk/text-input/ng-package.json"
+            "tsConfig": "projects/ksk/dynamic-form/tsconfig.lib.json",
+            "project": "projects/ksk/dynamic-form/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ksk/text-input/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ksk/dynamic-form/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ksk/text-input/src/test.ts",
-            "tsConfig": "projects/ksk/text-input/tsconfig.spec.json",
-            "karmaConfig": "projects/ksk/text-input/karma.conf.js"
+            "main": "projects/ksk/dynamic-form/src/test.ts",
+            "tsConfig": "projects/ksk/dynamic-form/tsconfig.spec.json",
+            "karmaConfig": "projects/ksk/dynamic-form/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ksk/text-input/tsconfig.lib.json",
-              "projects/ksk/text-input/tsconfig.spec.json"
+              "projects/ksk/dynamic-form/tsconfig.lib.json",
+              "projects/ksk/dynamic-form/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        }
+      }
+    },
+    "IntegrationTesting": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/integration-testing",
+      "sourceRoot": "projects/integration-testing/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/IntegrationTesting",
+            "index": "projects/integration-testing/src/index.html",
+            "main": "projects/integration-testing/src/main.ts",
+            "polyfills": "projects/integration-testing/src/polyfills.ts",
+            "tsConfig": "projects/integration-testing/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/integration-testing/src/favicon.ico",
+              "projects/integration-testing/src/assets"
+            ],
+            "styles": [
+              "projects/integration-testing/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/integration-testing/src/environments/environment.ts",
+                  "with": "projects/integration-testing/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "IntegrationTesting:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "IntegrationTesting:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "IntegrationTesting:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/integration-testing/src/test.ts",
+            "polyfills": "projects/integration-testing/src/polyfills.ts",
+            "tsConfig": "projects/integration-testing/tsconfig.spec.json",
+            "karmaConfig": "projects/integration-testing/karma.conf.js",
+            "assets": [
+              "projects/integration-testing/src/favicon.ico",
+              "projects/integration-testing/src/assets"
+            ],
+            "styles": [
+              "projects/integration-testing/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/integration-testing/tsconfig.app.json",
+              "projects/integration-testing/tsconfig.spec.json",
+              "projects/integration-testing/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/integration-testing/e2e/protractor.conf.js",
+            "devServerTarget": "IntegrationTesting:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "IntegrationTesting:serve:production"
+            }
           }
         }
       }

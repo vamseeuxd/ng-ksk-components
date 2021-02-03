@@ -1,0 +1,296 @@
+<ng-container [ngSwitch]="type">
+  <!-- ********************************************** EMAIL **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.EMAIL">
+    <ng-container *ngTemplateOutlet="emailInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** COLOR **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.COLOR">
+    <ng-container *ngTemplateOutlet="colorInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** DATE  **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.DATE">
+    <ng-container *ngTemplateOutlet="dateInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** DATETIME  **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.DATETIME">
+    <ng-container *ngTemplateOutlet="datetimeInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** MONTH **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.MONTH">
+    <ng-container *ngTemplateOutlet="monthInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** NUMBER  **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.NUMBER">
+    <ng-container *ngTemplateOutlet="numberInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** PASSWORD  **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.PASSWORD">
+    <ng-container *ngTemplateOutlet="passwordInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** SEARCH  **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.SEARCH">
+    <ng-container *ngTemplateOutlet="searchInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** TEL **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.TEL">
+    <ng-container *ngTemplateOutlet="telInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** TEXT  **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.TEXT">
+    <ng-container *ngTemplateOutlet="textInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** TIME  **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.TIME">
+    <ng-container *ngTemplateOutlet="timeInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** URL **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.URL">
+    <ng-container *ngTemplateOutlet="urlInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** WEEK  **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.WEEK">
+    <ng-container *ngTemplateOutlet="weekInputTemplateRef"></ng-container>
+  </ng-container>
+
+  <!-- ********************************************** SELECT  **********************************************  -->
+  <ng-container *ngSwitchCase="FORM_CONTROLLER_TYPE.SELECT">
+    <ng-container *ngTemplateOutlet="selectInputTemplateRef"></ng-container>
+  </ng-container>
+
+
+</ng-container>
+
+
+<!-- ********************************************** Email Input Template Ref **********************************************  -->
+<ng-template #emailInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput [name]="name" [ngModel]="defaultValue" email [placeholder]="placeholder" [required]="required"
+           [disabled]="disabled"
+           [minLength]="min"
+           [maxLength]="max"
+           [pattern]="pattern"
+           autocomplete="off" type="email"/></mat-form-field>
+</ng-template>
+
+<!-- ********************************************** Color Input Template Ref **********************************************  -->
+<ng-template #colorInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput [name]="name" [ngModel]="defaultValue" [placeholder]="placeholder" [required]="required"
+           [disabled]="disabled"
+           autocomplete="off" type="color"/></mat-form-field>
+</ng-template>
+
+<!-- ********************************************** Date Input Template Ref  **********************************************  -->
+<ng-template #dateInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput [name]="name"
+           [matDatepicker]="picker"
+           [ngModel]="defaultValue"
+           [placeholder]="placeholder"
+           [min]="min"
+           [max]="max"
+           [required]="required"
+           [disabled]="disabled" autocomplete="off"/>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</ng-template>
+
+<!-- ********************************************** Datetime Input Template Ref  **********************************************  -->
+<ng-template #datetimeInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput
+           [name]="name"
+           [ngModel]="defaultValue"
+           [placeholder]="placeholder"
+           [required]="required"
+           [min]="min"
+           [max]="max"
+           [disabled]="disabled"
+           autocomplete="off" type="datetime-local"/></mat-form-field>
+</ng-template>
+
+<!-- ********************************************** Month Input Template Ref **********************************************  -->
+<ng-template #monthInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput [name]="name"
+           [ngModel]="defaultValue"
+           [placeholder]="placeholder"
+           [required]="required"
+           [min]="min"
+           [max]="max"
+           [disabled]="disabled"
+           autocomplete="off" type="month"/></mat-form-field>
+</ng-template>
+
+<!-- ********************************************** Number Input Template Ref  **********************************************  -->
+<ng-template #numberInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput [name]="name"
+           [ngModel]="defaultValue"
+           [placeholder]="placeholder"
+           [required]="required"
+           [min]="min"
+           [max]="max"
+           [disabled]="disabled"
+           autocomplete="off" type="number"/></mat-form-field>
+</ng-template>
+
+<!-- ********************************************** Password Input Template Ref  **********************************************  -->
+<ng-template #passwordInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput [name]="name"
+           [ngModel]="defaultValue"
+           [placeholder]="placeholder"
+           [required]="required"
+           [minLength]="min"
+           [maxLength]="max"
+           [pattern]="pattern"
+           [disabled]="disabled"
+           autocomplete="off" type="password"/></mat-form-field>
+</ng-template>
+
+<!-- ********************************************** Search Input Template Ref  **********************************************  -->
+<ng-template #searchInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput
+           [name]="name"
+           [ngModel]="defaultValue"
+           [placeholder]="placeholder"
+           [required]="required"
+           [minLength]="min"
+           [maxLength]="max"
+           [pattern]="pattern"
+           [disabled]="disabled"
+           autocomplete="off" type="search"/></mat-form-field>
+</ng-template>
+
+<!-- ********************************************** Tel Input Template Ref **********************************************  -->
+<ng-template #telInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput [name]="name"
+           [ngModel]="defaultValue"
+           [minLength]="min"
+           [maxLength]="max"
+           [pattern]="pattern"
+           [placeholder]="placeholder"
+           [required]="required"
+           [disabled]="disabled"
+           autocomplete="off" type="tel"/></mat-form-field>
+</ng-template>
+
+<!-- ********************************************** Text Input Template Ref  **********************************************  -->
+<ng-template #textInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }} | max: {{max}}</mat-label>
+    <input matInput
+           [name]="name"
+           [minLength]="min"
+           [maxLength]="max"
+           [pattern]="pattern"
+           [ngModel]="defaultValue"
+           [placeholder]="placeholder"
+           [required]="required"
+           [disabled]="disabled"
+           autocomplete="off" type="text"/></mat-form-field>
+</ng-template>
+
+<!-- ********************************************** Time Input Template Ref  **********************************************  -->
+<ng-template #timeInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput
+           [name]="name"
+           [ngModel]="defaultValue"
+           [placeholder]="placeholder"
+           [required]="required"
+           [min]="min"
+           [max]="max"
+           [disabled]="disabled"
+           autocomplete="off"
+           type="time"/></mat-form-field>
+</ng-template>
+
+<!-- ********************************************** Url Input Template Ref **********************************************  -->
+<ng-template #urlInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput
+           [name]="name"
+           [ngModel]="defaultValue"
+           [placeholder]="placeholder"
+           [required]="required"
+           [disabled]="disabled"
+           [minLength]="min"
+           [maxLength]="max"
+           [pattern]="pattern"
+           autocomplete="off"
+           type="url"/></mat-form-field>
+</ng-template>
+
+<!-- ********************************************** Week Input Template Ref  **********************************************  -->
+<ng-template #weekInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput
+           [name]="name"
+           [ngModel]="defaultValue"
+           [placeholder]="placeholder"
+           [required]="required"
+           [min]="min"
+           [max]="max"
+           [disabled]="disabled"
+           autocomplete="off" type="week"/></mat-form-field>
+</ng-template>
+
+<!-- ********************************************** select Input Template Ref  **********************************************  -->
+<ng-template #selectInputTemplateRef>
+  <mat-form-field class="w-100">
+    <mat-label>{{ label }}</mat-label>
+    <mat-select [name]="name"
+                [ngModel]="defaultValue"
+                [disabled]="disabled"
+                *ngIf="multiple"
+                [required]="required"
+                multiple>
+      <mat-option [value]="'test1'">Test 1</mat-option>
+      <mat-option [value]="'test2'">Test 2</mat-option>
+      <mat-option [value]="'test3'">Test 3</mat-option>
+      <mat-option [value]="'test4'">Test 4</mat-option>
+      <mat-option [value]="'test5'">Test 5</mat-option>
+    </mat-select>
+    <mat-select [name]="name"
+                [ngModel]="defaultValue"
+                [disabled]="disabled"
+                [required]="required"
+                *ngIf="!multiple">
+      <mat-option [value]="'test1'">Test 1</mat-option>
+      <mat-option [value]="'test2'">Test 2</mat-option>
+      <mat-option [value]="'test3'">Test 3</mat-option>
+      <mat-option [value]="'test4'">Test 4</mat-option>
+      <mat-option [value]="'test5'">Test 5</mat-option>
+    </mat-select>
+  </mat-form-field>
+</ng-template>
+

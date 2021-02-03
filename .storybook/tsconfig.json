@@ -1,5 +1,5 @@
 {
-  "extends": "../projects/ksk/text-input/tsconfig.lib.json",
+  "extends": "../projects/ksk/dynamic-form/tsconfig.lib.json",
   "compilerOptions": {
     "types": [
       "node"
