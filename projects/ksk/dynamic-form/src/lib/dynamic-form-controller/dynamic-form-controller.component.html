@@ -77,19 +77,33 @@
 <ng-template #emailInputTemplateRef>
   <mat-form-field class="w-100">
     <mat-label>{{ label }}</mat-label>
-    <input matInput [name]="name" [ngModel]="defaultValue" email [placeholder]="placeholder" [required]="required"
+    <input matInput
+           [name]="name"
+           [ngModel]="defaultValue"
+           [autofocus]="autoFocus"
+           email
+           #emailInput="ngModel"
+           [placeholder]="placeholder"
+           [required]="required"
            [disabled]="disabled"
            [minLength]="min"
            [maxLength]="max"
            [pattern]="pattern"
-           autocomplete="off" type="email"/></mat-form-field>
+           autocomplete="off"
+           type="email"/>
+    <mat-hint>{{help}}</mat-hint>
+      <mat-error *ngIf="emailInput.dirty && (emailInput.errors?.email || emailInput.errors?.required)">
+        Please enter a valid email address
+      </mat-error>
+  </mat-form-field>
 </ng-template>
 
 <!-- ********************************************** Color Input Template Ref **********************************************  -->
 <ng-template #colorInputTemplateRef>
   <mat-form-field class="w-100">
     <mat-label>{{ label }}</mat-label>
-    <input matInput [name]="name" [ngModel]="defaultValue" [placeholder]="placeholder" [required]="required"
+    <input matInput [name]="name" [ngModel]="defaultValue"
+           [autofocus]="autoFocus" [placeholder]="placeholder" [required]="required"
            [disabled]="disabled"
            autocomplete="off" type="color"/></mat-form-field>
 </ng-template>
@@ -101,6 +115,7 @@
     <input matInput [name]="name"
            [matDatepicker]="picker"
            [ngModel]="defaultValue"
+           [autofocus]="autoFocus"
            [placeholder]="placeholder"
            [min]="min"
            [max]="max"
@@ -118,6 +133,7 @@
     <input matInput
            [name]="name"
            [ngModel]="defaultValue"
+           [autofocus]="autoFocus"
            [placeholder]="placeholder"
            [required]="required"
            [min]="min"
@@ -132,6 +148,7 @@
     <mat-label>{{ label }}</mat-label>
     <input matInput [name]="name"
            [ngModel]="defaultValue"
+           [autofocus]="autoFocus"
            [placeholder]="placeholder"
            [required]="required"
            [min]="min"
@@ -146,6 +163,7 @@
     <mat-label>{{ label }}</mat-label>
     <input matInput [name]="name"
            [ngModel]="defaultValue"
+           [autofocus]="autoFocus"
            [placeholder]="placeholder"
            [required]="required"
            [min]="min"
@@ -160,6 +178,7 @@
     <mat-label>{{ label }}</mat-label>
     <input matInput [name]="name"
            [ngModel]="defaultValue"
+           [autofocus]="autoFocus"
            [placeholder]="placeholder"
            [required]="required"
            [minLength]="min"
@@ -176,6 +195,7 @@
     <input matInput
            [name]="name"
            [ngModel]="defaultValue"
+           [autofocus]="autoFocus"
            [placeholder]="placeholder"
            [required]="required"
            [minLength]="min"
@@ -191,6 +211,7 @@
     <mat-label>{{ label }}</mat-label>
     <input matInput [name]="name"
            [ngModel]="defaultValue"
+           [autofocus]="autoFocus"
            [minLength]="min"
            [maxLength]="max"
            [pattern]="pattern"
@@ -210,6 +231,7 @@
            [maxLength]="max"
            [pattern]="pattern"
            [ngModel]="defaultValue"
+           [autofocus]="autoFocus"
            [placeholder]="placeholder"
            [required]="required"
            [disabled]="disabled"
@@ -223,6 +245,7 @@
     <input matInput
            [name]="name"
            [ngModel]="defaultValue"
+           [autofocus]="autoFocus"
            [placeholder]="placeholder"
            [required]="required"
            [min]="min"
@@ -239,6 +262,7 @@
     <input matInput
            [name]="name"
            [ngModel]="defaultValue"
+           [autofocus]="autoFocus"
            [placeholder]="placeholder"
            [required]="required"
            [disabled]="disabled"
@@ -256,6 +280,7 @@
     <input matInput
            [name]="name"
            [ngModel]="defaultValue"
+           [autofocus]="autoFocus"
            [placeholder]="placeholder"
            [required]="required"
            [min]="min"
